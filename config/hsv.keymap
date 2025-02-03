@@ -278,7 +278,7 @@
   &kp EXCL         &kp AT           &kp HASH         &kp DLLR                &kp PRCNT        &kp CARET               &kp AMPS         &kp ASTRK                 &kp LPAR                  &kp RPAR
   &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp KP_NUMBER_4         &kp KP_NUMBER_5  &kp KP_NUMBER_6         &kp KP_NUMBER_7  &kp KP_NUMBER_8           &kp KP_NUMBER_9           &kp KP_NUMBER_0
   &kp TILDE        &kp GRAVE        &trans           &trans                  &kp BACKSLASH    &kp MINUS               &kp UNDER        &trans                    &trans                    &trans
-  &kp LEFT         &kp RIGHT        &trans           &kp_then_to_layer0 TAB  &trans           &kp_then_to_layer0 ESC  &kp BACKSPACE    &kp_then_to_layer0 SPACE  &kp_then_to_layer0 ENTER  &trans
+  &kp LEFT         &kp RIGHT        &to 0            &kp_then_to_layer0 TAB  &trans           &kp_then_to_layer0 ESC  &kp BACKSPACE    &kp_then_to_layer0 SPACE  &kp_then_to_layer0 ENTER  &trans
             >;
         };
 
