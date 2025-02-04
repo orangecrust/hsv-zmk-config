@@ -3,16 +3,14 @@ manifest:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
     - name: petejohanson
-      url-base: https://github.com/petejohanson
-    - name: badjeff
-      url-base: https://github.com/badjeff
+      url-base: https://github.com/petejohanson/
   projects:
+    - name: cirque-input-module
+      remote: petejohanson
+      revision: main
     - name: zmk
       remote: zmkfirmware
-      import: app/west.yml
       revision: main
-    - name: cirque-input-module
-      remote: badjeff
-      revision: tweak
+      import: app/west.yml
   self:
     path: config
