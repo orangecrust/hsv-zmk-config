@@ -19,44 +19,6 @@
 #define WASD 5
 #define MISC 6
 
-/*
-/ {
-    tpad_central_listener {
-        compatible = "zmk,input-behavior-listener";
-        device = <&glidepoint0>;
-        y-invert;
-        scale-multiplier = <2>;
-    };
-
-    tpad_peripheral_listener {
-        compatible = "zmk,input-behavior-listener";
-        device = <&glidepoint1>;
-        layers = <QWERTY NUM STICKY_NUM FBRACKET BT_NAV WASD, MISC>;
-        y-invert;
-        scale-multiplier = <2>;
-    };
-
-    tpad_peripheral_scroll {
-        compatible = "zmk,input-behavior-listener";
-        device = <&glidepoint1>;
-        layers = <BT_NAV>;
-
-        // NOTE: only apply input-code overriding for INPUT_EV_REL
-
-        evt-type = <INPUT_EV_REL>;
-        x-input-code = <INPUT_REL_HWHEEL>;
-        y-input-code = <INPUT_REL_WHEEL>;
-        bindings = <&ib_wheel_scaler 1 8>;
-    };
-
-    ib_wheel_scaler: ib_wheel_scaler {
-        compatible = "zmk,input-behavior-scaler";
-        #binding-cells = <2>;
-        evt-type = <INPUT_EV_REL>;
-        input-code = <INPUT_REL_WHEEL>;
-    };
-};
-*/
 
 &caps_word {
 };
@@ -255,70 +217,70 @@
         qwerty {
             display-name = "qwerty";
             bindings = <
-  &kp Q    &kp W                     &kp E                    &kp R                  &kp T     &kp Y       &kp U                  &kp I                         &kp O                           &kp P
-  &kp A    &kp S                     &kp D                    &kp F                  &kp G     &kp H       &kp J                  &kp K                         &kp L                           &kp SINGLE_QUOTE
-  &kp Z    &hrm_ctrl_alt LEFT_ALT X  &hrm_shift LEFT_SHIFT C  &hrm_ctrl_alt LCTRL V  &kp B     &kp N       &hrm_ctrl_alt RCTRL M  &hrm_shift RIGHT_SHIFT COMMA  &hrm_ctrl_alt RIGHT_ALT PERIOD  &kp FSLH
-  &kp TAB  &kp LCTRL                 &ht_layer 1 2            &lt_layer 6 TAB        &kp CAPS  &kp ESCAPE  &kp SEMI               &kp SPACE                     &ht 3 ENTER                     &kp ENTER
+                &kp Q    &kp W                     &kp E                    &kp R                  &kp T     &kp Y       &kp U                  &kp I                         &kp O                           &kp P
+                &kp A    &kp S                     &kp D                    &kp F                  &kp G     &kp H       &kp J                  &kp K                         &kp L                           &kp SINGLE_QUOTE
+                &kp Z    &hrm_ctrl_alt LEFT_ALT X  &hrm_shift LEFT_SHIFT C  &hrm_ctrl_alt LCTRL V  &kp B     &kp N       &hrm_ctrl_alt RCTRL M  &hrm_shift RIGHT_SHIFT COMMA  &hrm_ctrl_alt RIGHT_ALT PERIOD  &kp FSLH
+                &kp TAB  &kp LCTRL                 &ht_layer 1 2            &lt_layer 6 TAB        &kp CAPS  &kp ESCAPE  &kp SEMI               &kp SPACE                     &ht 3 ENTER                     &kp ENTER
             >;
         };
 
         numbers {
             display-name = "numbers";
             bindings = <
-  &kp EXCL         &kp AT           &kp HASH         &kp DLLR         &kp PRCNT        &kp CARET        &kp AMPS         &kp ASTRK        &kp LPAR         &kp RPAR
-  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp KP_NUMBER_0
-  &kp TILDE        &kp GRAVE        &trans           &trans           &kp BACKSLASH    &kp MINUS        &kp UNDER        &trans           &trans           &trans
-  &kp LEFT         &kp RIGHT        &trans           &trans           &trans           &trans           &kp BACKSPACE    &trans           &kp DELETE       &trans
+                &kp EXCL         &kp AT           &kp HASH         &kp DLLR         &kp PRCNT        &kp CARET        &kp AMPS         &kp ASTRK        &kp LPAR         &kp RPAR
+                &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp KP_NUMBER_0
+                &kp TILDE        &kp GRAVE        &trans           &trans           &kp BACKSLASH    &kp MINUS        &kp UNDER        &trans           &trans           &trans
+                &kp LEFT         &kp RIGHT        &trans           &trans           &trans           &trans           &kp BACKSPACE    &trans           &kp DELETE       &trans
             >;
         };
 
         sticky_numbers {
             display-name = "sticky numbers";
             bindings = <
-  &kp EXCL         &kp AT           &kp HASH         &kp DLLR                &kp PRCNT        &kp CARET               &kp AMPS         &kp ASTRK                 &kp LPAR                  &kp RPAR
-  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp KP_NUMBER_4         &kp KP_NUMBER_5  &kp KP_NUMBER_6         &kp KP_NUMBER_7  &kp KP_NUMBER_8           &kp KP_NUMBER_9           &kp KP_NUMBER_0
-  &kp TILDE        &kp GRAVE        &trans           &trans                  &kp BACKSLASH    &kp MINUS               &kp UNDER        &trans                    &trans                    &trans
-  &kp LEFT         &kp RIGHT        &to 0            &kp_then_to_layer0 TAB  &trans           &kp_then_to_layer0 ESC  &kp BACKSPACE    &kp_then_to_layer0 SPACE  &kp_then_to_layer0 ENTER  &trans
+                &kp EXCL         &kp AT           &kp HASH         &kp DLLR                &kp PRCNT        &kp CARET               &kp AMPS         &kp ASTRK                 &kp LPAR                  &kp RPAR
+                &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp KP_NUMBER_4         &kp KP_NUMBER_5  &kp KP_NUMBER_6         &kp KP_NUMBER_7  &kp KP_NUMBER_8           &kp KP_NUMBER_9           &kp KP_NUMBER_0
+                &kp TILDE        &kp GRAVE        &trans           &trans                  &kp BACKSLASH    &kp MINUS               &kp UNDER        &trans                    &trans                    &trans
+                &kp LEFT         &kp RIGHT        &to 0            &kp_then_to_layer0 TAB  &trans           &kp_then_to_layer0 ESC  &kp BACKSPACE    &kp_then_to_layer0 SPACE  &kp_then_to_layer0 ENTER  &trans
             >;
         };
 
         function_bracket {
             display-name = "brackets";
             bindings = <
-  &kp F1  &kp F2   &kp F3   &kp F4   &trans  &trans     &kp KP_NUMLOCK         &kp INSERT         &kp PAUSE_BREAK  &kp PRINTSCREEN
-  &kp F5  &kp F6   &kp F7   &kp F8   &trans  &kp MINUS  &kp LEFT_PARENTHESIS   &kp LEFT_BRACKET   &kp LEFT_BRACE   &kp COLON
-  &kp F9  &kp F10  &kp F11  &kp F12  &trans  &kp UNDER  &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACKET  &kp RIGHT_BRACE  &kp SEMI
-  &trans  &trans   &mo 4    &trans   &trans  &trans     &trans                 &trans             &trans           &trans
+                &kp F1  &kp F2   &kp F3   &kp F4   &trans  &trans     &kp KP_NUMLOCK         &kp INSERT         &kp PAUSE_BREAK  &kp PRINTSCREEN
+                &kp F5  &kp F6   &kp F7   &kp F8   &trans  &kp MINUS  &kp LEFT_PARENTHESIS   &kp LEFT_BRACKET   &kp LEFT_BRACE   &kp COLON
+                &kp F9  &kp F10  &kp F11  &kp F12  &trans  &kp UNDER  &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACKET  &kp RIGHT_BRACE  &kp SEMI
+                &trans  &trans   &mo 4    &trans   &trans  &trans     &trans                 &trans             &trans           &trans
             >;
         };
 
         bt_nav {
             display-name = "nav";
             bindings = <
-  &trans        &trans     &trans  &trans  &trans  &bt BT_SEL 0    &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
-  &kp LEFT_ALT  &kp LSHFT  &trans  &trans  &trans  &kp LEFT        &kp DOWN      &kp UP        &kp RIGHT     &trans
-  &trans        &trans     &trans  &trans  &trans  &kp HOME        &kp PG_DN     &kp PG_UP     &kp END       &trans
-  &trans        &trans     &trans  &trans  &trans  &bt BT_CLR_ALL  &bt BT_PRV    &bt BT_NXT    &bt BT_CLR    &trans
+                &trans        &trans     &trans  &trans  &trans  &bt BT_SEL 0    &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
+                &kp LEFT_ALT  &kp LSHFT  &trans  &trans  &trans  &kp LEFT        &kp DOWN      &kp UP        &kp RIGHT     &trans
+                &trans        &trans     &trans  &trans  &trans  &kp HOME        &kp PG_DN     &kp PG_UP     &kp END       &trans
+                &trans        &trans     &trans  &trans  &trans  &bt BT_CLR_ALL  &bt BT_PRV    &bt BT_NXT    &bt BT_CLR    &trans
             >;
         };
 
         wasd_mouse {
             display-name = "mouse";
             bindings = <
-  &trans  &trans          &kp UP_ARROW  &trans     &trans     &trans     &trans          &kp UP_ARROW  &trans     &trans
-  &trans  &kp LEFT_ARROW  &kp DOWN      &kp RIGHT  &trans     &trans     &kp LEFT_ARROW  &kp DOWN      &kp RIGHT  &trans
-  &trans  &trans          &trans        &trans     &trans     &trans     &trans          &trans        &trans     &trans
-  &to 0   &trans          &mkp RCLK     &mkp LCLK  &mkp MCLK  &mkp MCLK  &mkp LCLK       &mkp RCLK     &trans     &to 0
+                &trans  &trans          &kp UP_ARROW  &trans     &trans     &trans     &trans          &kp UP_ARROW  &trans     &trans
+                &trans  &kp LEFT_ARROW  &kp DOWN      &kp RIGHT  &trans     &trans     &kp LEFT_ARROW  &kp DOWN      &kp RIGHT  &trans
+                &trans  &trans          &trans        &trans     &trans     &trans     &trans          &trans        &trans     &trans
+                &to 0   &trans          &mkp RCLK     &mkp LCLK  &mkp MCLK  &mkp MCLK  &mkp LCLK       &mkp RCLK     &trans     &to 0
             >;
         };
 
         misc {
             display-name = "misc";
             bindings = <
-  &kp ESC      &trans   &trans    &trans    &trans  &trans  &trans  &trans  &trans  &kp EQUAL
-  &kp CAPS     &kp TAB  &mkp MB2  &mkp MB1  &trans  &trans  &trans  &trans  &trans  &kp SEMI
-  &shift_word  &trans   &trans    &trans    &trans  &trans  &trans  &trans  &trans  &trans
-  &trans       &trans   &trans    &kp TAB   &trans  &trans  &trans  &trans  &trans  &trans
+                &kp ESC      &trans   &trans    &trans    &trans  &trans  &trans  &trans  &trans  &kp EQUAL
+                &kp CAPS     &kp TAB  &mkp MB2  &mkp MB1  &trans  &trans  &trans  &trans  &trans  &kp SEMI
+                &shift_word  &trans   &trans    &trans    &trans  &trans  &trans  &trans  &trans  &trans
+                &trans       &trans   &trans    &kp TAB   &trans  &trans  &trans  &trans  &trans  &trans
             >;
         };
     };
