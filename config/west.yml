@@ -13,6 +13,6 @@ manifest:
       revision: main
     - name: cirque-input-module
       remote: badjeff
-      revision: main
+      revision: tweak
   self:
     path: config
