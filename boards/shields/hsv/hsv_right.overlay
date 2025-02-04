@@ -37,42 +37,43 @@
   status = "okay";
 };
 
-/*&pro_micro_i2c {
-*    status = "okay";
-*
-*    glidepoint: glidepoint@2a {
-*        compatible = "cirque,pinnacle";
-*        reg = <0x2A>;
-*        status = "okay";
-*        dr-gpios = <&gpio1 2 (GPIO_ACTIVE_HIGH)>;
-*
-*        sensitivity = "4x";
-*        sleep;
-*    };
-*};
-*/
-&spi3 {
-    compatible = "nordic,nrf-spim";
+&pro_micro_i2c {
     status = "okay";
 
-    pinctrl-0 = <&spi3_default>;
-    pinctrl-1 = <&spi3_sleep>;
-    pinctrl-names = "default", "sleep";
-
-    cs-gpios = <&gpio0 6 GPIO_ACTIVE_LOW>;
-
-	glidepoint: glidepoint@0 {
+    glidepoint: glidepoint@2a {
         compatible = "cirque,pinnacle";
-        reg = <0>;
-        spi-max-frequency = <1000000>;
+        reg = <0x2A>;
         status = "okay";
-        dr-gpios = <&gpio0 9 (GPIO_ACTIVE_HIGH)>;
+        dr-gpios = <&gpio1 2 (GPIO_ACTIVE_HIGH)>;
 
         sensitivity = "4x";
         sleep;
-        no-taps;
     };
 };
+
+/*&spi3 {
+*    compatible = "nordic,nrf-spim";
+*    status = "okay";
+*
+*    pinctrl-0 = <&spi3_default>;
+*    pinctrl-1 = <&spi3_sleep>;
+*    pinctrl-names = "default", "sleep";
+*
+*    cs-gpios = <&gpio0 6 GPIO_ACTIVE_LOW>;
+*
+*	glidepoint: glidepoint@0 {
+*        compatible = "cirque,pinnacle";
+*        reg = <0>;
+*        spi-max-frequency = <1000000>;
+*        status = "okay";
+*        dr-gpios = <&gpio0 9 (GPIO_ACTIVE_HIGH)>;
+*
+*        sensitivity = "4x";
+*        sleep;
+*        no-taps;
+*    };
+*};
+*/
 
 &glidepoint_split {
     device = <&glidepoint>;

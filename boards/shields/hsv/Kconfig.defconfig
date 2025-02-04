@@ -24,12 +24,8 @@ config ZMK_SPLIT
 config ZMK_DISPLAY
     select LV_FONT_UNSCII_16
 
-if ZMK_POINTER
-
 config I2C
   default y
-
-endif # ZMK_MOUSE
 
 if ZMK_DISPLAY
 
