@@ -14,6 +14,5 @@ manifest:
     - name: cirque-input-module
       remote: petejohanson
       revision: main
-    - name: hsv-zmk-module
   self:
     path: config
