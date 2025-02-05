@@ -270,7 +270,7 @@
                 &trans  &trans          &kp UP_ARROW  &trans     &trans     &trans     &trans          &kp UP_ARROW  &trans     &trans
                 &trans  &kp LEFT_ARROW  &kp DOWN      &kp RIGHT  &trans     &trans     &kp LEFT_ARROW  &kp DOWN      &kp RIGHT  &trans
                 &trans  &trans          &trans        &trans     &trans     &trans     &trans          &trans        &trans     &trans
-                &to 0   &trans          &mkp RCLK     &mkp LCLK  &mkp MCLK  &mkp MCLK  &mkp LCLK       &mkp RCLK     &trans     &to 0
+                &to 0   &trans          &to 2         &mkp LCLK  &mkp MCLK  &mkp MCLK  &mkp LCLK       &mkp RCLK     &trans     &to 0
             >;
         };
 
