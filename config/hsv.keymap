@@ -73,10 +73,25 @@
             bindings =
                 <&macro_param_1to1 &kp MACRO_PLACEHOLDER>,
                 <&macro_tap>,
-                <&to 0>;
+                <&tog_off_then_to_0>;
 
             label = "KEY_THEN_LAYER_SWITCH";
         };
+
+        tog_off_then_to_0: tog_off_then_to_0{
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_param_1to1 &tog_off 1>,
+                <&macro_param_1to1 &tog_off 2>,
+                <&macro_param_1to1 &tog_off 3>,
+                <&macro_param_1to1 &tog_off 4>,
+                <&macro_param_1to1 &tog_off 5>,
+                <&macro_param_1to1 &tog_off 6>,
+                <&to 0>,
+
+            label = "TO_TOG_OFF";
+        }
     };
 
     behaviors {
@@ -151,6 +166,13 @@
             flavor = "tap-unless-interrupted";
             tapping-term-ms = <3000>;
         };
+
+        tog_off: tog_off {
+            compatible = "zmk,behavior-toggle-layer";
+            #binding-cells = <1>;
+            display-name = "Toggle Layer Off";
+            toggle-mode = "off";
+        }
     };
 
     combos {
