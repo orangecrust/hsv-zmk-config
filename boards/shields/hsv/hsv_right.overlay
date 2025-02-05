@@ -56,7 +56,7 @@
     device = <&glidepoint>;
 
     // optional input processor
-    input-processors = <&zip_xy_scaler 3 2>;//, <&zip_temp_layer 5 600>;
+    input-processors = <&zip_xy_scaler 3 2>, <&zip_temp_layer 5 600>;
 
     scroll {
         layers = <3>;
