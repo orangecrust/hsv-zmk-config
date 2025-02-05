@@ -48,7 +48,6 @@
 
         sensitivity = "1x";
         y-invert;
-        sleep;
     };
 };
 
@@ -56,6 +55,6 @@
     device = <&glidepoint>;
 
     // optional input processor
-    // input-processor = <>
+    input-processor = <&zip_xy_scaler 3 2,&zip_temp_layer 5 600>
 };
 
